@@ -1,0 +1,14 @@
+{
+  "name": "radxaboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bleno": "npm:@abandonware/bleno@^0.5.1-4"
+  }
+}

@@ -1,0 +1,12 @@
+[radxa env]
+sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev git
+
+curl -o node-v14.17.1.tar.gz https://nodejs.org/dist/v14.17.1/node-v14.17.1-linux-arm64.tar.gz
+
+tar -xzf node-v14.17.1.tar.gz
+sudo cp -r node-v14.17.1-linux-arm64/\* /usr/local/
+
+npm install bleno@npm:@abandonware/bleno
+
+sudo apt-get install libusb-1.0-0-dev
+npm install bluetooth-hci-socket -> at bleno/
