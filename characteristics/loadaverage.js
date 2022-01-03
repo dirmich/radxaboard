@@ -1,6 +1,5 @@
 const bleno = require('bleno')
 const os = require('os')
-const util = require('util')
 
 class LoadAverageCharacteristic extends bleno.Characteristic {
   constructor() {

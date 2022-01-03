@@ -1,5 +1,4 @@
 const bleno = require('bleno')
-const util = require('util')
 
 const LoadAverageCharacteristic = require('./characteristics/loadaverage')
 const UptimeCharacteristic = require('./characteristics/uptime')

@@ -21,9 +21,7 @@ exec('hciconfig hci1 up').then(() => {
 bleno.on('advertisingStart', (err) => {
   console.log('on -> advertising start: ', err ? err : 'success')
   if (!err) {
-    bleno.setServices([systemInformationService], (err) => {
-      console.log('set service error', err)
-    })
+    bleno.setServices([systemInformationService])
   }
 })
 

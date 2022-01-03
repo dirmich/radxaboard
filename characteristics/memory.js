@@ -1,6 +1,5 @@
 const bleno = require('bleno')
 const os = require('os')
-const util = require('util')
 
 class MemoryCharacteristic extends bleno.Characteristic {
   constructor() {
