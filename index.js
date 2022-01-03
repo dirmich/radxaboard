@@ -18,26 +18,26 @@ exec('hciconfig hci1 up').then(() => {
   })
 })
 
-bleno.on('advertisingStart', (err ? err : 'success') => {
+bleno.on('advertisingStart', (err) => {
   console.log('on -> advertising start: ', err ? err : 'success')
-  if (!err ? err : 'success') {
+  if (!err) {
     bleno.setServices([systemInformationService])
   }
 })
 
-bleno.on('advertisingStartError', (err ? err : 'success') => {
+bleno.on('advertisingStartError', (err) => {
   console.log('advertising StartError', err ? err : 'success')
 })
 
-bleno.on('servicesSet', (err ? err : 'success') => {
+bleno.on('servicesSet', (err) => {
   console.log('servicesSet', err ? err : 'success')
 })
 
-bleno.on('servicesSetError', (err ? err : 'success') => {
+bleno.on('servicesSetError', (err) => {
   console.log('services Set Error', err ? err : 'success')
 })
 
-bleno.on('advertisingStop', (err ? err : 'success') => {
+bleno.on('advertisingStop', (err) => {
   console.log('advertising Stop', err ? err : 'success')
 })
 
