@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@abandonware/bluetooth-hci-socket": "^0.5.3-7",
     "bleno": "npm:@abandonware/bleno@^0.5.1-4"
   }
 }
