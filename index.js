@@ -7,7 +7,7 @@ const SystemInformationService = require('./systeminformationservice')
 const systemInformationService = new SystemInformationService()
 
 exec('hciconfig hci1 up').then(() => {
-  bleno.on('stateChange', function (state) {
+  bleno.on('stateChange', (state) => {
     console.log('on -> stateChange: ' + state)
 
     if (state === 'poweredOn') {
@@ -18,37 +18,39 @@ exec('hciconfig hci1 up').then(() => {
   })
 })
 
-bleno.on('advertisingStart', function (err) {
+bleno.on('advertisingStart', (err) => {
   console.log('on -> advertising start: ', err ? err : 'success')
   if (!err) {
-    bleno.setServices([systemInformationService])
+    bleno.setServices([systemInformationService], (err) => {
+      console.log('set service error', err)
+    })
   }
 })
 
-bleno.on('advertisingStartError', function (err) {
+bleno.on('advertisingStartError', (err) => {
   console.log('advertising StartError', err)
 })
 
-bleno.on('servicesSet', function (err) {
+bleno.on('servicesSet', (err) => {
   console.log('servicesSet', err)
 })
 
-bleno.on('servicesSetError', function (err) {
+bleno.on('servicesSetError', (err) => {
   console.log('services Set Error', err)
 })
 
-bleno.on('advertisingStop', function (err) {
+bleno.on('advertisingStop', (err) => {
   console.log('advertising Stop', err)
 })
 
-bleno.on('accept', function (addr) {
+bleno.on('accept', (addr) => {
   console.log('accept', addr)
 })
 
-bleno.on('disconnect', function (addr) {
+bleno.on('disconnect', (addr) => {
   console.log('disconnect', addr)
 })
 
-bleno.on('rssiUpdate', function (rssi) {
+bleno.on('rssiUpdate', (rssi) => {
   console.log('rssi Update', rssi)
 })
