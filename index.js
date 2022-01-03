@@ -43,10 +43,12 @@ bleno.on('advertisingStop', (err) => {
 
 bleno.on('accept', (addr) => {
   console.log('accept', addr)
+  bleno.stopAdvertising()
 })
 
 bleno.on('disconnect', (addr) => {
   console.log('disconnect', addr)
+  bleno.startAdvertising('MiC', [systemInformationService.uuid])
 })
 
 bleno.on('rssiUpdate', (rssi) => {
